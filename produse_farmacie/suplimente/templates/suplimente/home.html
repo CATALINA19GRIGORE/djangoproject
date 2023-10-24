@@ -1,0 +1,35 @@
+{% extends 'suplimente/base.html' %}
+
+{% block content %}
+        <style>
+            tabel, th, td {
+                border: 1px solid black;
+            }
+        </style>
+        <h2>NECESAR COMANDA MEDICAMENTE</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>MEDICAMENT/SUPLIMENT</th>
+                    <th>STATUS</th>
+                    <th>DE COMANDAT</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% if med %}
+                        {% for medicament in med %}
+                            <tr>
+                                <td>{{ medicament.medicament }}</td>
+                                <td>{{ medicament.comandat }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+            </tbody>
+        </table>
+    <form method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+          <button type="submit" class="btn btn-dark">SUBMIT</button>
+    </form>
+{% endblock %}
