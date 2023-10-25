@@ -10,10 +10,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>MEDICAMENT/SUPLIMENT</th>
+                    <th>CANTITATE</th>
                     <th>STATUS</th>
-                    <th>DE COMANDAT</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +20,7 @@
                         {% for medicament in med %}
                             <tr>
                                 <td>{{ medicament.medicament }}</td>
+                                <td>{{ medicament.cantitate }}</td>
                                 <td>{{ medicament.comandat }}</td>
                             </tr>
                         {% endfor %}
